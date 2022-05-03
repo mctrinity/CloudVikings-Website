@@ -13,6 +13,9 @@ h1 {
   font-size: 3.5rem;
   line-height: 1.5;
   text-align: center;
+  padding: 20px 0 20px 0;
+  position: relative;
+  z-index: 1;
 }
 
 h3 {
@@ -27,6 +30,11 @@ p {
   background-color: #FFF;
   color: #6998AB;
   padding: 50px 50px;
+}
+
+.feature-box {
+  text-align: center;
+  padding: 3.5%;
 }
 
 #clan-details {
