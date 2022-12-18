@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    image: cloudvikingsweb
+    build: .
+    container_name: cloudvikingsweb
+    restart: always
+    ports:
+      - "8080:80"
