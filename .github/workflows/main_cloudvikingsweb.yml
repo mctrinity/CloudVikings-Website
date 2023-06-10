@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://mcr.microsoft.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_b5638bb9ea53449d987343aa056d816f }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_cb587843789e44c1a8173c4ef8781a64 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_479c57e7ddce436ba6e527b90ef5c3eb }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_3994a9182aa346d1855bd345ba1dd318 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_b5638bb9ea53449d987343aa056d816f }}/appsvc/staticsite:${{ github.sha }}
+        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_479c57e7ddce436ba6e527b90ef5c3eb }}/appsvc/staticsite:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'cloudvikingsweb'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_23a38c35c084445580a55c880265b008 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_b5638bb9ea53449d987343aa056d816f }}/appsvc/staticsite:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_70928681b51e4581a054d3e63ae8292a }}
+        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_479c57e7ddce436ba6e527b90ef5c3eb }}/appsvc/staticsite:${{ github.sha }}'
